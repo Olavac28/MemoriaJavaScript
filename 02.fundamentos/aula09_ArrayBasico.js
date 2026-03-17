@@ -4,10 +4,12 @@ console.log(a[1]);
 console.log(a.pop()); //retorna e tira o ultimo valor do array
 console.log(a); //printa tudo
 
+console.log(a.shift()); //retorna e tira o primeiro valor do array
+
 delete a[0]; //deleta um valor do array
 console.log(a); 
 
-a.push(20); //adiciona um valor ao array
+a.push(20); //adiciona um valor ao final array
 console.log(a);
 
 console.log(a.length); //tamanho
