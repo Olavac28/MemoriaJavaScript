@@ -14,7 +14,18 @@ for(atr in pessoa) { //percorre todos os atributos do objeto
     console.log(atr + ' = ' + pessoa[atr]); //tem que ser em []
 }
 
+
+//forEach == sem retorno
 let numeros = [1, 2, 3, 4, 5];
 numeros.forEach(n => { //solução mais moderna para o for each
     console.log(n);
 });
+
+//map == com retorno
+const numerosTriplicados = numeros.map(num => num * 3); //modo simples
+console.log(numerosDobrados);
+
+const numerosDobrados = numeros.map((num) => { //modo robusto (com chaves e return)
+    return num * 2;
+});
+console.log(numerosDobrados);
