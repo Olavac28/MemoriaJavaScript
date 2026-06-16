@@ -2,7 +2,7 @@ export class Pessoa {
     #nome;
     #nivel = 1;
     #vida = 100;
-    #vidaMax = this.#nivel * 10 + 90;
+    #vidaMax = 100;
 
     constructor(nome) {
         this.#nome = nome;
@@ -24,21 +24,56 @@ export class Pessoa {
         return this.#vida;
     }
 
+    setVida(vida) {
+        if(vida < 0)
+            return;
+
+        this.#vida = vida;
+    }
+    
+    setVidaMax(vida) {
+        if(vida <= 0)
+            return;
+
+        this.#vidaMax = vida;
+    }
+
     atacar(inimigo) {
+        if(this.#vida == 0)
+            return;
+
         let dano = 1 * this.#nivel + 9;
 
         inimigo.receberDano(dano);
         console.log(`${this.#nome} atacou ${inimigo.getNome()} e causou ${dano} de dano`);
+
+        if(inimigo.getVida() == 0)
+            console.log(`${inimigo.getNome()} morreu`);
     }
     
     receberDano(dano) {
         this.#vida = this.#vida - dano;
 
-        if(this.#vida < 0)
+        if(this.#vida <= 0)
             this.#vida = 0;
     }
 
     curar(cura) {
+        if(this.#vida == 0)
+            return;
+
+        this.curou(cura);
+    }
+
+    reviver(cura) {
+        if(this.#vida > 0)
+            return;
+
+        console.log(this.#nome + ' foi revivido');
+        this.curou(cura)
+    }
+
+    curou(cura) {
         if(this.#vida + cura > this.#vidaMax)
             cura = this.#vidaMax - this.#vida;
 
@@ -47,6 +82,9 @@ export class Pessoa {
     }
 
     uparNivel(niveisUpados) {
+        if(this.#vida == 0)
+            return;
+
         this.#nivel = this.#nivel + niveisUpados;
         console.log(this.#nome + ' upou ' + niveisUpados + ' nivel(s)')
         //colocar o this para chamar uma função interna tbm
@@ -58,10 +96,12 @@ export class Pessoa {
     }
 
     mostrarStatus() {
-        console.log(`Nome: ${this.#nome}
+        console.log(`---------------------------------------------------
+Nome: ${this.#nome}
 Nível: ${this.#nivel}
 Vida Maxíma: ${this.#vidaMax}
-Vida: ${this.#vida}`
+Vida: ${this.#vida}
+---------------------------------------------------`
         );
     }
 }

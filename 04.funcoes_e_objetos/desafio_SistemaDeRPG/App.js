@@ -1,9 +1,14 @@
-import { Pessoa } from "./Pessoa.js";
+import { Berserk } from "./Berserk.js";
+import { Curandeiro } from "./Curandeiro.js";
 
-const p1 = new Pessoa('Player1');
-const p2 = new Pessoa('Player2');
+const p1 = new Berserk('Player1');
+const p2 = new Curandeiro('Player2');
 
-p1.uparNivel(1);
-p1.atacar(p2);
+p2.uparNivel(40);
+p2.atacar(p1);
+
+p1.mostrarStatus();
+
+p1.atacar(p2)
 
 p2.mostrarStatus();
