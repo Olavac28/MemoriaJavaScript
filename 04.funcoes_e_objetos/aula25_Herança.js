@@ -11,16 +11,16 @@ class PAI {
         this.sobrenome = sobrenome;
     }
 
-    slaOq() {
-        console.log('ok');
+    digaOSobrenome() {
+        console.log('Meu sobrenome é ' + this.sobrenome);
     }
 }
 
 class FILHO extends PAI { //msm coisa só que em classes
     constructor(sobrenome) {
-        super(sobrenome); //herda o construtor; nn sei como usa :(
+        super(sobrenome); //acessa a classe PAI
     }
 }
 
-let João = new FILHO;
-João.slaOq();
+let João = new FILHO('Costa');
+João.digaOSobrenome();
