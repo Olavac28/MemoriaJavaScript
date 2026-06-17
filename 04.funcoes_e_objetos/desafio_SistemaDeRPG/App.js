@@ -1,14 +1,46 @@
 import { Berserk } from "./Berserk.js";
+import { Assassino } from "./Assassino.js";
 import { Curandeiro } from "./Curandeiro.js";
 
-const p1 = new Berserk('Player1');
-const p2 = new Curandeiro('Player2');
+const berserk = new Berserk('Berserk');
+const assassino = new Assassino('Assassino');
+const curandeiro = new Curandeiro('Curandeiro');
 
-p2.uparNivel(40);
-p2.atacar(p1);
+berserk.uparNivel(10);
+assassino.uparNivel(10);
 
-p1.mostrarStatus();
+console.log('Round 1:');
+berserk.atacar(assassino);
+assassino.atacar(berserk);
+curandeiro.atacar(berserk);
 
-p1.atacar(p2)
+console.log('\nRound 2:');
+berserk.atacar(assassino);
+assassino.atacar(berserk);
+curandeiro.curarAliado(assassino);
 
-p2.mostrarStatus();
+console.log('\nRound 3:');
+berserk.atacar(assassino);
+assassino.atacar(berserk);
+curandeiro.curarAliado(assassino);
+
+console.log('\nRound 4:');
+berserk.atacar(assassino);
+assassino.atacar(berserk);
+curandeiro.curarAliado(assassino);
+
+console.log('\nRound 5:');
+berserk.atacar(assassino);
+assassino.atacar(berserk);
+curandeiro.atacar(berserk);
+
+console.log('\nRound 5:');
+berserk.atacar(curandeiro);
+curandeiro.reviverAliado(assassino);
+assassino.atacar(berserk);
+
+console.log('\n');
+
+berserk.mostrarStatus();
+assassino.mostrarStatus();
+curandeiro.mostrarStatus();

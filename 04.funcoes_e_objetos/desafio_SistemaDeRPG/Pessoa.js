@@ -82,17 +82,18 @@ export class Pessoa {
     }
 
     uparNivel(niveisUpados) {
-        if(this.#vida == 0)
+        if(this.#vida == 0 || niveisUpados < 1)
             return;
 
         this.#nivel = this.#nivel + niveisUpados;
         console.log(this.#nome + ' upou ' + niveisUpados + ' nivel(s)')
         //colocar o this para chamar uma função interna tbm
-        this.calcularVidaMax();
+        this.calcularVidaMax(niveisUpados);
     }
 
-    calcularVidaMax() {
+    calcularVidaMax(niveisUpados) {
         this.#vidaMax = this.#nivel * 10 + 90;
+        this.#vida = this.#vida + niveisUpados * 10;
     }
 
     mostrarStatus() {
