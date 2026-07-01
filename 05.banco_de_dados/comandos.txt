@@ -1,0 +1,10 @@
+npm install pg ---------------> instala o postgre no projeto
+sudo -u postgres psql --------> entra no postgre
+    SELECT current_user; -----> mostra qual é o usuario do db
+    SHOW port; ---------------> mostra qual é a porta
+    \q -----------------------> sai do postgre
+npm install bcrypt -----------> biblioteca para transformar a senha em hash
+npm install dotenv -----------> para usar o .env
+npm install ------------------> baixa todas as ferramentas
+node #NomeDoArquivo ----------> executa um arquivo em node (necessário para funcionar o .env)
+cp #Nome do arquivo a ser clonado #Nome do arquivo clonado -----> duplica um arquivo
