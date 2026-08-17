@@ -14,10 +14,9 @@ for(atr in pessoa) { //percorre todos os atributos do objeto
     console.log(atr + ' = ' + pessoa[atr]); //tem que ser em []
 }
 
-
 //forEach == sem retorno
 let numeros = [1, 2, 3, 4, 5];
-numeros.forEach(n => { //solução mais moderna para o for each
+numeros.forEach(n => { //solução mais moderna para o forEach
     console.log(n);
 });
 
