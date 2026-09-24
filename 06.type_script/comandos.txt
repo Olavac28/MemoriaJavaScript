@@ -1,0 +1,2 @@
+npm install -D typescript -----> instala o typescript no projeto
+npx tsc --version -------------> verifica se o ts ta instalado e a versão dele
