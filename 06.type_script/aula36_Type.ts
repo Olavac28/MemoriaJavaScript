@@ -9,12 +9,7 @@ const pessoa2: Pessoa = { //usar o novo tipo
     idade: 20
 };
 
-type Pessoas = {
-    nome: string;
-    idade: number;
-};
-
-const pessoas2: Pessoas[] = [
+const pessoas2: Pessoa[] = [
     {
         nome: 'João',
         idade: 20
