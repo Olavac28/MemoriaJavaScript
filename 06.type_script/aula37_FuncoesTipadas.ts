@@ -6,7 +6,7 @@ function soma2(a: number, b: number): number | undefined {
     return; //pode nn retornar nada ou um número
 }
 
-function mostrarMensagem(mensagem: string): void { //nn retorna
+function mostrarMensagem9(mensagem: string): void { //nn retorna
     console.log(mensagem);
 }
 

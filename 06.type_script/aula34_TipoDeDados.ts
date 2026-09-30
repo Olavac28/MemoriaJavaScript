@@ -13,12 +13,13 @@ let n2: bigint; //inteiro muito grande
 let usuario: null = null; //ausencia intencional de valor
 
 let valor: undefined = undefined; //sem valor definido
+
 function buscarUsuario(id: number): string | undefined {
     if (id === 1) {
         return "ok";
     }
 
-    return undefined;
+    return undefined; //ou só return
 }
 
 function mostrarMensagem(): void { //sem retorno
