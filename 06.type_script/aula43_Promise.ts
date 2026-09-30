@@ -7,4 +7,6 @@
     return resultado.rows[0]
 }*/
 
-//promise é o tipo que representa um resultado que ainda não está disponível, mas vai estar no futuro
+//promise é algo que representa um resultado que ainda não está disponível, mas vai estar no futuro
+
+//Usuario5 é um objeto que eu nn declarei
